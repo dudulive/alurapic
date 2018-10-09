@@ -1,5 +1,6 @@
 import { PhotoService } from './photos/photo/photo.service';
 import { Component } from '@angular/core';
+import { Photo } from './photos/photo/photo';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   title = 'Alurapic';
-  photos: Object[] = [];
+  photos: Photo[] = [];
 
   constructor(photoService: PhotoService) {
     photoService.listFromUser('flavio')
