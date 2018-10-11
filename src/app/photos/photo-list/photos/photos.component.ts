@@ -9,10 +9,21 @@ import { Component, OnInit, Input } from '@angular/core';
 export class PhotosComponent implements OnInit {
 
   @Input() photos: Photo[] = [];
+  rows: any[] = [];
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  groupColumns(photos: Photo[]){
+      const newRows = [];
+
+      for (let index = 0; index < photos.length; index++) {
+        newRows.push(photos.slice(index, index + 3));
+      }
+
+      return newRows;
   }
 
 }
