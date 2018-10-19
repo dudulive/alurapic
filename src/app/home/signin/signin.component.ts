@@ -1,3 +1,4 @@
+import { AuthService } from './../../core/auth.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from "@angular/core";
 
@@ -8,7 +9,8 @@ export class SignInComponent implements OnInit {
     
     loginForm: FormGroup;
 
-    constructor(private formBuilder: FormBuilder){
+    constructor(private formBuilder: FormBuilder, 
+        private authService: AuthService){
 
     }
 
@@ -19,4 +21,16 @@ export class SignInComponent implements OnInit {
        });
     }
 
+    login(){
+        const password = this.loginForm.get('password').value;
+        const userName = this.loginForm.get('userName').value;
+
+        this.authService.authenticate(userName, password).subscribe(
+            () => {},
+            err => {
+                console.log(err);
+                this.loginForm.reset();
+            }
+        );
+    }
 }

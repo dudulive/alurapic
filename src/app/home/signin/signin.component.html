@@ -1,6 +1,6 @@
 <h4 class="text-center">Login</h4>
 
-<form [formGroup]="loginForm" class="form mt-4">
+<form [formGroup]="loginForm" class="form mt-4" (submit)="login()" >
 
     <div class="form-group">
         <input formControlName="userName"
@@ -22,7 +22,7 @@
             </ap-vmessage>                  
     </div>
 
-    <button 
+    <button  
         type="submit" [disabled]="loginForm.invalid"
         class="btn btn-primary btn-block">
         login
