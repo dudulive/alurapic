@@ -1,5 +1,4 @@
-
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'ap-vmessage',
@@ -7,5 +6,5 @@ import { Component, OnInit, Input } from "@angular/core";
 })
 export class VMessageComponent {
 
-    @Input() text: string = '';
-}
+    @Input() text = '';
+ }

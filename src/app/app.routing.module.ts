@@ -9,9 +9,9 @@ import { SignInComponent } from './home/signin/signin.component';
 
 const routes: Routes = [
     { 
-        path: '', 
-        component: SignInComponent,
-    },
+        path: '',
+        component: SignInComponent 
+    },    
     { 
         path: 'user/:userName', 
         component: PhotoListComponent,
