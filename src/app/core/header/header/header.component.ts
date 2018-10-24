@@ -12,11 +12,9 @@ import { User } from '../../user/user';
 export class HeaderComponent {
     
     user$: Observable<User>;
-    user: User;
 
     constructor(userService: UserService){
         this.user$ = userService.getUsers();
-        this.user$.subscribe(user => this.user = user);
     }
 
 }
